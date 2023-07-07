@@ -6,7 +6,7 @@ const PORT = 3000;
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-   return res.sendFile(path.join(__dirname, "/views/home.html"));
+   return res.sendFile(path.join(__dirname, "C:\Users\toti\Desktop\Mercado liebre final\index.html"));
 })
 
 app.listen(PORT, () => console.log(`
