@@ -1,15 +1,21 @@
-const express = require("express");
-const path = require("path");
-const app = express();
-const PORT = 3000;
+const express= require('express')
+const app= express()
+const path = require('path')
+const puerto=3030
 
-app.use(express.static("public"));
+app.use(express.static(path.resolve(__dirname, './public')));
 
-app.get("/", (req, res) => {
-   return res.sendFile(path.join(__dirname, "C:\Users\toti\Desktop\Mercado liebre final\index.html"));
+app.get('/',(req,res)=>{
+    res.sendFile(path.join(__dirname, "index.html"))
 })
 
-app.listen(PORT, () => console.log(`
-Server listen in port ${PORT}
-http://localhost:${PORT}
-`))
+app.get('/register',(req,res)=>{
+    res.sendFile(path.join(__dirname, './views/register.html'))
+})
+app.get('/login',(req,res)=>{
+    res.sendFile(path.join(__dirname, './views/login.html'))
+})
+
+app.listen(process.env.PORT || 3000, function(){
+    console.log('Servidor Corriendo en el puerto 3000')
+});
