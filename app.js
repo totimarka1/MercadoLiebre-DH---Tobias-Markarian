@@ -4,7 +4,7 @@ const path = require('path')
 const puerto=3030
 const dotenv = require('dotenv').config();
 
-// Configura el tipo MIME para archivos estáticos
+
 app.use(express.static('public', { 'extensions': ['css'], 'index': false, 'setHeaders': (res, path) => {
   res.setHeader('Content-Type', 'text/css');
 }}));
